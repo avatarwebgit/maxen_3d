@@ -1,0 +1,10 @@
+.App {
+}
+.main {
+  height: 500vh;
+  width: 100vw;
+}
+.canvas {
+  width: 100%;
+  height: 100vh;
+}
