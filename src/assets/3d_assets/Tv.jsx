@@ -4,14 +4,15 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useSpring } from "react-spring";
 import { calculateRotation } from "../../utils/calculateRotation";
 import * as THREE from "three";
-import { HemisphereLight } from "@react-three/drei";
+
+import tv from "../3d_assets/tv_final.glb";
 
 export const TV = (props) => {
   const meshRef = useRef();
   const pointLightRef = useRef();
   const { camera } = useThree();
 
-  const { nodes, materials } = useGLTF("/tv_final.glb");
+  const { nodes, materials } = useGLTF(tv);
 
   const { rotationX, rotationY, zoom, CX, CY, meshPositionX, frontLightValue } =
     calculateRotation(props.scroll);
