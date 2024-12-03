@@ -1,19 +1,19 @@
-import React, { forwardRef, useEffect, useRef, useState } from "react";
-import { Environment, Html, OrbitControls, useGLTF } from "@react-three/drei";
+import React, { useRef, useState } from "react";
+import { Environment, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useSpring } from "react-spring";
 import { calculateRotation } from "../../utils/calculateRotation";
 import * as THREE from "three";
+import { HemisphereLight } from "@react-three/drei";
 
-export const TV = (props, ref) => {
-  const [envHidden, setEnvHidden] = useState(false);
-
+export const TV = (props) => {
   const meshRef = useRef();
+  const pointLightRef = useRef();
   const { camera } = useThree();
 
   const { nodes, materials } = useGLTF("/tv_final.glb");
 
-  const { rotationX, rotationY, zoom, CX, CY, meshPositionX } =
+  const { rotationX, rotationY, zoom, CX, CY, meshPositionX, frontLightValue } =
     calculateRotation(props.scroll);
 
   const springProps = useSpring({
@@ -23,6 +23,7 @@ export const TV = (props, ref) => {
     CY,
     zoom,
     meshPositionX,
+    frontLightValue,
     config: { tension: 120, friction: 28 },
   });
 
@@ -45,6 +46,9 @@ export const TV = (props, ref) => {
       camera.position.y = 5 / springProps.CY.get();
       camera.position.z = 5 / springProps.zoom.get();
     }
+    if (pointLightRef.current) {
+      pointLightRef.current.intensity = springProps.frontLightValue.get();
+    }
   });
 
   return (
@@ -54,9 +58,10 @@ export const TV = (props, ref) => {
         rotation={[1.551, 0.006, -3.138]}
         scale={0.07}
       >
+        <pointLight position={[0, 2, -500]} intensity={10000} decay={6} />
         <pointLight position={[0, 2, 500]} intensity={10000} decay={6} />
-        <pointLight position={[0, 2, -500]} intensity={!envHidden?100:10000} decay={6} />
-        {!envHidden && <Environment preset="warehouse" />}
+        <directionalLight position={[-100, -100, 100]} ref={pointLightRef} color={'#555555'}/>
+        <Environment preset="warehouse" />
         <mesh
           geometry={nodes.BCD2_86001_1.geometry}
           material={materials.mat5}

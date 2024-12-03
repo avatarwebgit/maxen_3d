@@ -1,23 +1,89 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Button, IconButton } from "@mui/material";
+
+import { useDispatch } from "react-redux";
+import { drawerAction } from "../store/store";
+import Drawer from "../components/Drawer";
+
+import { timeTillContentVisiable } from "../utils/constants";
 
 import classes from "./Header.module.css";
-const Header = () => {
+import { Menu } from "@mui/icons-material";
+const Header = ({ scrollAmount }) => {
+  const [isOffsetValid, setIsOffsetValid] = useState(false);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (scrollAmount < 500) {
+      setIsOffsetValid(false);
+    } else {
+      setIsOffsetValid(true);
+    }
+  }, [scrollAmount]);
+
+  const handleOpenDrawer = () => {
+    dispatch(drawerAction.open());
+  };
+
+  const initialTitleState = {
+    opacity: 0,
+  };
+
   return (
     <header className={classes.header}>
-      <span className={classes.logo}>
-        <h1></h1>
-      </span>
+      <div className={classes.logo_container}>
+        <motion.h2
+          className={classes.title}
+          initial={initialTitleState}
+          animate={{ opacity: isOffsetValid ? 1 : 0 }}
+          transition={{
+            delay: isOffsetValid ? timeTillContentVisiable : 0,
+            duration: isOffsetValid ? 1 : 0,
+          }}
+        ></motion.h2>
+      </div>
       <span className={classes.links}>
-        <div className={classes.wrapper}>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
+        <motion.div
+          className={classes.wrapper}
+          initial={initialTitleState}
+          animate={{ opacity: isOffsetValid ? 1 : 0 }}
+          transition={{
+            delay: isOffsetValid ? timeTillContentVisiable : 0,
+            duration: isOffsetValid ? 1 : 0,
+          }}
+        >
+          <a href="#">
+            <Button className={classes.header_btn} type="button" size="small">
+              تلوزیون
+            </Button>
+          </a>
+          <a href="#">
+            <Button className={classes.header_btn} type="button" size="small">
+              لوازم خانگی
+            </Button>
+          </a>
+          <a href="#">
+            <Button className={classes.header_btn} type="button" size="small">
+              تهویه مطبوع
+            </Button>
+          </a>
+          <a href="#">
+            <Button className={classes.header_btn} type="button" size="small">
+              تجهیزات جانبی
+            </Button>
+          </a>
+          <button className={classes.locale_btn}>FA</button>
+          <IconButton
+            className={classes.hamburger_menu}
+            onClick={() => handleOpenDrawer()}
+          >
+            <Menu sx={{ color: "white" }} className={classes.menu_icon} />
+          </IconButton>
+        </motion.div>
       </span>
+      <Drawer />
     </header>
   );
 };

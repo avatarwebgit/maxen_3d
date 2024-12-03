@@ -1,5 +1,11 @@
 :root {
-  --padding-left-s: 0;
-  --padding-left-m: 10px;
-  --padding-left-b: 12px;
+  --hp-s: "";
+  --hp-m: "";
+  --hp-b: "";
+
+  --padding-s: 0;
+  --padding-m: 10px;
+  --padding-b: 8rem;
+
+  --font-big-desktop: 35px;
 }

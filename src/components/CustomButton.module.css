@@ -1,0 +1,24 @@
+.main {
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  width: fit-content;
+  padding: 5px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow_icon {
+  width: 15px !important;
+  height: 15px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

@@ -1,0 +1,39 @@
+@import url(../style/variables.css);
+
+.main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_wrapper {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--padding-b);
+  margin-top: 2.2rem;
+}
+.svg_wrapper {
+  width: 6rem;
+  margin-bottom: 0.25rem;
+}
+.text_wrapper {
+  width: 60%;
+  direction: rtl;
+}
+.text {
+  color: #c3c3c3;
+  line-height: 150%;
+  font-size: 11px;
+  text-align: justify;
+}
+br {
+  margin-bottom: 1rem;
+}

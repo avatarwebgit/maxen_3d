@@ -1,3 +1,7 @@
+@font-face {
+  font-family: pelak;
+  src: url(./assets/fonts/PelakFA-Medium.woff);
+}
 body {
   margin: 0;
   padding: 0;
@@ -5,8 +9,15 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: pelak;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
 }

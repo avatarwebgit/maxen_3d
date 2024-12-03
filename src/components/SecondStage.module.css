@@ -1,0 +1,29 @@
+@import url(../style/variables.css);
+.main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.content_wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 20%;
+  text-align: right;
+  margin-left: 15rem;
+}
+.more_btn {
+  margin-top: 1rem;
+ 
+}
+.text {
+  color: white;
+  font-size: 40px;
+}

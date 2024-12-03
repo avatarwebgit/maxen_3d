@@ -1,0 +1,15 @@
+.main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text{
+    color: white ;
+    font-size: 4.5rem ;
+    transform: translateY(4.5rem) ;
+}

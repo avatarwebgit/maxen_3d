@@ -6,7 +6,7 @@ function Star({ count, color }) {
   const mesh = useRef();
 
   const particles = useMemo(() => {
-    const positions = new Float32Array(count * 3); // 3 coordinates per particle
+    const positions = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
       positions[i * 3] = (Math.random() - 0.5) * 200; // x
       positions[i * 3 + 1] = (Math.random() - 0.5) * 200; // y
@@ -20,7 +20,7 @@ function Star({ count, color }) {
 
   const material = new THREE.PointsMaterial({
     color: color,
-    size: .1, 
+    size: 0.01,
     sizeAttenuation: true,
   });
 
@@ -29,9 +29,9 @@ function Star({ count, color }) {
 
     for (let i = 0; i < count; i++) {
       const index = i * 3;
-      positions[index] += (Math.random() - 0.5) * 0.05; // x movement
-      positions[index + 1] += (Math.random() - 0.5) * 0.05; // y movement
-      positions[index + 2] += (Math.random() - 0.5) * 0.05; // z movement
+      positions[index] += (Math.random() - 0.5) * 0.010; // x movement
+      positions[index + 1] += (Math.random() - 0.5) * 0.010; // y movement
+      positions[index + 2] += (Math.random() - 0.5) * 0.010; // z movement
 
       if (
         positions[index] > 100 ||
