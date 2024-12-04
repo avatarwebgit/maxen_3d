@@ -20,7 +20,7 @@ import FourthStage from "./FourthStage";
 import FifthStage from "./FifthStage";
 import SixthStage from "./SixthStage";
 import SeventhStage from "./SeventhStage";
-const ContentWrapper = ({ scrollAmount }) => {
+const ContentWrapper = ({ scrollAmount, windowSize }) => {
   const [isLogoSmall, setIsLogoSmall] = useState(false);
   const [visiableStage, setVisiableStage] = useState({
     firstStage: false,
@@ -34,8 +34,8 @@ const ContentWrapper = ({ scrollAmount }) => {
 
   const updateVisibleStage = (stage) => {
     setVisiableStage({
-      firstStage: stage === 1 || stage === 0|| stage === 1.5,
-      secondStage: stage === 2 ,
+      firstStage: stage === 1 || stage === 0 || stage === 1.5,
+      secondStage: stage === 2,
       thirdStage: stage === 3,
       fourthStage: stage === 4,
       fifthStage: stage === 5,
@@ -61,6 +61,20 @@ const ContentWrapper = ({ scrollAmount }) => {
 
   const initialStageState = {
     opacity: 0,
+  };
+
+  const returnAnimationProps = () => {
+    if (windowSize === "l" || windowSize === "xl") {
+      return {
+        left: `${isLogoSmall ? "3%" : "7.5%"}`,
+        top: `${isLogoSmall ? "50%" : "40%"}`,
+      };
+    } else {
+      return {
+        left: `${isLogoSmall ? "3%" : "7.5%"}`,
+        top: `${isLogoSmall ? "35%" : "45%"}`,
+      };
+    }
   };
 
   useEffect(() => {
@@ -101,10 +115,7 @@ const ContentWrapper = ({ scrollAmount }) => {
           <motion.div
             className={`${classes.float_btn_wrapper}`}
             initial={initialFloatBtnState}
-            animate={{
-              left: `${isLogoSmall ? "3%" : "7.5%"}`,
-              top: `${isLogoSmall ? "50%" : "40%"}`,
-            }}
+            animate={returnAnimationProps}
             transition={{ duration: 0.25, type: "tween" }}
           >
             <Tooltip title={"خدمات پس از فروش"} placement="top" arrow>
@@ -184,7 +195,7 @@ const ContentWrapper = ({ scrollAmount }) => {
           animate={{ opacity: visiableStage.sixthStage ? 1 : 0 }}
           transition={{ duration: 2 }}
         >
-          <SixthStage scrollAmount={scrollAmount} />
+          <SixthStage scrollAmount={scrollAmount} windowSize={windowSize} />
         </motion.div>
       )}
 

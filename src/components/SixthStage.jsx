@@ -7,9 +7,22 @@ import classes from "./SixthStage.module.css";
 const SixthStage = (props) => {
   const { stage } = calculateRotation(props.scrollAmount);
   const [isInViewport, setIsInViewport] = useState(false);
+  const [windowSize, setWindowSize] = useState('')
 
   const initialTextState = {
     y: 250,
+  };
+
+  const returnAnimationProps = () => {
+    if (windowSize === "l" || windowSize === "xl") {
+      return {
+        y: `${isInViewport ? 150 : 250}`,
+      };
+    } else {
+      return {
+        y: `${isInViewport ? 100 : 250}`,
+      };
+    }
   };
 
   useEffect(() => {
@@ -20,12 +33,16 @@ const SixthStage = (props) => {
     }
   }, [stage]);
 
+  useEffect(() => {
+    setWindowSize(props.windowSize)
+  }, [props.windowSize]);
+
   return (
     <motion.section {...props} className={classes.main}>
       <motion.p
         className={classes.text}
         initial={initialTextState}
-        animate={{ y: isInViewport ? 150 : 250 }}
+        animate={returnAnimationProps}
         transition={{ duration: 1 }}
       >
         FRAMELESS TV's

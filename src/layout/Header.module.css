@@ -73,3 +73,35 @@
 .menu_icon:hover {
   transform: scaleY(1.25);
 }
+@media only screen and (max-width: 576px) {
+  .header {
+    height: 3rem;
+  }
+  .wrapper {
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .header {
+    height: 3rem;
+  }
+  .wrapper {
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    height: 3rem;
+  }
+  .wrapper {
+    margin-right: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1441px) {
+}

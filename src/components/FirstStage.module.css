@@ -36,7 +36,7 @@ img {
 }
 .text {
   color: white;
-  font-size: xx-small;
+  font-size: 0.5rem;
   padding: 10px 0.8rem;
 }
 .shape {
@@ -51,18 +51,34 @@ img {
   justify-content: center;
   flex-direction: column;
 }
-.all_tvs {
-  border: 1px solid white;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  padding: 5px 7px;
-}
 .e_text {
-  font-size: var(--font-big-desktop);
+  font-size: 0.5rem;
   width: 300px;
   text-align: right;
   color: white;
+}
+.all_tvs {
+}
+@media only screen and (max-width: 576px) {
+  .dived_bot {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .dived_bot {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .dived_bot {
+    padding: 0 1rem 0 1rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1441px) {
 }

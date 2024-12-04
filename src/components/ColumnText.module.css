@@ -9,9 +9,7 @@
   height: 1px;
   width: 1.5rem;
   background-color: white;
-}
-.divider:nth-of-type(1) {
-  width: 2rem;
+  transition: all 0.25s;
 }
 .text {
   cursor: pointer;
@@ -25,6 +23,32 @@
   width: 100%;
   transition: all 0.2s;
 }
+.active + .divider {
+  width: 2.5rem;
+}
 .active {
   color: rgb(252, 83, 83);
+}
+@media only screen and (max-width: 576px) {
+  .main {
+    display: none;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .main {
+    display: none;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .main {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  .main {
+    display: flex;
+  }
 }

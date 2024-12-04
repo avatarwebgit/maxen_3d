@@ -7,7 +7,7 @@ import { TV } from "../assets/3d_assets/Tv";
 import classes from "./TvContent.module.css";
 import Star from "./Star";
 import ContentWrapper from "./ContentWrapper";
-const TvContent = (props) => {
+const TvContent = ({ windowSize }) => {
   const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const TvContent = (props) => {
   }, []);
 
   return (
-    <motion.div className={classes.main} {...props}>
+    <motion.div className={classes.main}>
       <Canvas className={classes.canvas} camera={{ zoom: 1, fov: 70 }}>
         <Star count={10000} color={"#043874"} />
         <Star count={100} color={"#0c427e"} />
@@ -33,7 +33,7 @@ const TvContent = (props) => {
         <Star count={1000} color={"#8495d0"} />
         <TV scroll={scroll} scale={0.05} />
       </Canvas>
-      <ContentWrapper scrollAmount={scroll} />
+      <ContentWrapper scrollAmount={scroll} windowSize={windowSize} />
     </motion.div>
   );
 };

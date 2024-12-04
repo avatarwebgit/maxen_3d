@@ -12,11 +12,10 @@ const ColumnText = (props, { className, lng }) => {
 
   const { stage } = calculateRotation(scroll);
 
-  const stages = [0, 100, 2000, 2900, 4000, 5900, 6500, 7500];
+  const stages = [100, 100, 2000, 2900, 4000, 5900, 6500, 7500];
 
   useEffect(() => {
     handleScrollToStage(stages[stage]);
-    setStageStep(stage);
   }, []);
 
   const handleKeyDown = (event) => {

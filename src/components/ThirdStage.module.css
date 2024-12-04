@@ -30,4 +30,37 @@
 }
 .text {
   color: white;
+  font-size: 0.8rem;
+}
+@media only screen and (max-width: 576px) {
+  .text_wrapper {
+    width: 70%;
+  }
+  .content_wrapper {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .text_wrapper {
+    width: 70%;
+  }
+  .content_wrapper {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .text_wrapper {
+    width: 70%;
+  }
+  .content_wrapper {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1441px) {
 }
