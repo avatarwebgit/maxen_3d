@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 6px;
+  margin-bottom: .5rem;
   right: 10%;
   opacity: 0;
 }
@@ -98,35 +98,47 @@
 }
 
 @media only screen and (max-width: 576px) {
+  .float_button{
+    width: 35px;
+    height: 35px;
+  }
   .column_text {
     display: none;
   }
   .logo_height_small {
-    top: 1.2rem;
-    width: 20%;
-    left: 15%;
+    top: .5rem;
+    width: 30%;
+    left: 20%;
   }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
+  .float_button{
+    width: 35px;
+    height: 35px;
+  }
   .column_text {
     display: none;
   }
   .logo_height_small {
-    top: 1.2rem;
-    width: 20%;
-    left: 15%;
+    top: .5rem;
+    width: 30%;
+    left: 20%;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .float_button{
+    width: 35px;
+    height: 35px;
+  }
   .column_text {
     display: none;
   }
   .logo_height_small {
-    top: 1.2rem;
-    width: 20%;
-    left: 15%;
+    top: .5rem;
+    width: 30%;
+    left: 20%;
   }
 }
 

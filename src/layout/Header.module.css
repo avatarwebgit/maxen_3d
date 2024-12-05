@@ -40,7 +40,7 @@
   padding: 5px !important;
   margin: 5px !important;
   font-family: pelak !important;
-  font-size: 15px !important;
+  font-size: 0.7rem !important;
 }
 .header_btn:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.391) !important;
@@ -56,7 +56,7 @@
   align-items: center;
   justify-content: center;
   color: white !important;
-  font-size: x-small;
+  font-size: .7rem;
 }
 .drawer {
   background-color: white;
@@ -74,29 +74,53 @@
   transform: scaleY(1.25);
 }
 @media only screen and (max-width: 576px) {
+  .locale_btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
   .header {
     height: 3rem;
   }
   .wrapper {
     margin-right: 2rem;
+  }
+  .header_btn {
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
+  .locale_btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
   .header {
     height: 3rem;
   }
   .wrapper {
     margin-right: 2rem;
+  }
+  .header_btn {
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .locale_btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
   .header {
     height: 3rem;
   }
   .wrapper {
     margin-right: 2rem;
+  }
+  .header_btn {
+    display: none !important;
   }
 }
 

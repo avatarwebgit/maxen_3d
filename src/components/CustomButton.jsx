@@ -21,13 +21,13 @@ const CustomButton = ({ className, onClick, children, href }) => {
       onHoverEnd={() => setIsHovering(false)}
     >
       <motion.span
-        className={classes.icon_werapper}
+        className={classes.icon_wrapper}
         animate={{ x: isHovering ? -5 : 0 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        transition={{ type: 'spring', stiffness: 300 }}
       >
         <ArrowBackIos className={classes.arrow_icon} />
       </motion.span>
-      {href !== "" ? (
+      {href !== '' ? (
         <p className={classes.btn_text}>{children}</p>
       ) : (
         <a href={href}>

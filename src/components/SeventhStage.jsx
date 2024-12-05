@@ -53,7 +53,7 @@ const SeventhStage = (props) => {
           <div className={classes.ports_wrapper}>
             <img className={classes.ports_image} src={ports} alt="ports" />
           </div>
-          <div className={classes.text_wrapper}>
+          {/* <div className={classes.text_wrapper}>
             <span className={classes.wifi_wrapper}>
               <img className={classes.wifi_icon} src={wifi} alt="" />
             </span>
@@ -65,7 +65,7 @@ const SeventhStage = (props) => {
               <br /> در یک جو واقعی تر
             </p>
             <CustomButton className={classes.more_btn}>بیشتر</CustomButton>
-          </div>
+          </div> */}
         </div>
       </motion.div>
     </motion.section>

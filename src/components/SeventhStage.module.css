@@ -38,8 +38,8 @@
 }
 .right_side {
   position: relative;
-  height: 100%;
-  width: 35%;
+  height: 100vh;
+  width: 36.5%;
   display: flex;
   flex-direction: row-reverse;
   align-items: flex-end;
@@ -47,11 +47,13 @@
 }
 .ports_wrapper {
   width: 28%;
-  height: 33%;
-  margin-bottom: 2rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
 }
 .ports_image {
-  height: 100%;
+  margin-top: 54vh;
+  height: 20%;
   width: 100%;
   object-fit: contain;
 }
@@ -76,8 +78,22 @@
   direction: ltr;
 }
 .first_title {
-  font-size: 20px;
+  font-size: 1rem;
 }
 .second_title {
-  font-size: 12px;
+  font-size: .5rem;
 }
+ @media only screen and (max-width: 576px) {
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1441px) {
+} 

@@ -66,12 +66,12 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
   const returnAnimationProps = () => {
     if (windowSize === "l" || windowSize === "xl") {
       return {
-        left: `${isLogoSmall ? "3%" : "7.5%"}`,
+        left: `${isLogoSmall ? "5%" : "7.5%"}`,
         top: `${isLogoSmall ? "50%" : "40%"}`,
       };
     } else {
       return {
-        left: `${isLogoSmall ? "3%" : "7.5%"}`,
+        left: `${isLogoSmall ? "5%" : "7.5%"}`,
         top: `${isLogoSmall ? "35%" : "45%"}`,
       };
     }
@@ -81,9 +81,6 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
     updateVisibleStage(stage);
   }, [stage]);
 
-  useEffect(() => {
-    console.log(visiableStage.firstStage);
-  }, [visiableStage]);
 
   const initialState = {
     right: "-10%",
@@ -96,7 +93,7 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
           isLogoSmall ? classes.logo_height_small : classes.logo_height_big
         }`}
       >
-        <img className={classes.logo} src={logo} alt="maxen logo" />
+        <img className={classes.logo} src={logo} alt='maxen logo' />
         <motion.p
           className={classes.title_text}
           initial={initialStageState}
@@ -116,25 +113,25 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
             className={`${classes.float_btn_wrapper}`}
             initial={initialFloatBtnState}
             animate={returnAnimationProps}
-            transition={{ duration: 0.25, type: "tween" }}
+            transition={{ duration: 0.25, type: 'tween' }}
           >
-            <Tooltip title={"خدمات پس از فروش"} placement="top" arrow>
+            <Tooltip title={'خدمات پس از فروش'} placement='top' arrow>
               <button className={`${classes.float_button} ${classes.gear}`}>
-                <img src={gear} alt="" className={classes.float_btn_img} />
+                <img src={gear} alt='' className={classes.float_btn_img} />
               </button>
             </Tooltip>
-            <Tooltip title={"021-58736"} placement="top" arrow>
+            <Tooltip title={'021-58736'} placement='top' arrow>
               <button className={`${classes.float_button} ${classes.contact}`}>
-                <img src={contact} alt="" className={classes.float_btn_img} />
+                <img src={contact} alt='' className={classes.float_btn_img} />
               </button>
             </Tooltip>
           </motion.div>
           <ColumnText
             className={classes.column_text}
-            lng={"en"}
+            lng={'en'}
             initial={initialState}
-            animate={{ right: "1%" }}
-            transition={{ duration: 0.25, type: "tween" }}
+            animate={{ right: '1%' }}
+            transition={{ duration: 0.25, type: 'tween' }}
           />
         </>
       )}
@@ -185,7 +182,7 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
           animate={{ opacity: visiableStage.fifthStage ? 1 : 0 }}
           transition={{ duration: 2 }}
         >
-          <FifthStage />
+          <FifthStage windowSize={windowSize} />
         </motion.div>
       )}
 

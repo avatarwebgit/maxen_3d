@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { calculateRotation } from "../utils/calculateRotation";
+import { calculateRotation } from '../utils/calculateRotation';
 
-import classes from "./SixthStage.module.css";
-const SixthStage = (props) => {
-  const { stage } = calculateRotation(props.scrollAmount);
+import classes from './SixthStage.module.css';
+const SixthStage = ({ windowSize, scrollAmount }) => {
+  const { stage } = calculateRotation(scrollAmount);
   const [isInViewport, setIsInViewport] = useState(false);
-  const [windowSize, setWindowSize] = useState('')
+  const [size, setSize] = useState('');
 
   const initialTextState = {
     y: 250,
   };
 
-  const returnAnimationProps = () => {
-    if (windowSize === "l" || windowSize === "xl") {
+  const returnAnimationProps = e => {
+    if (e === 'l' || e === 'xl') {
       return {
-        y: `${isInViewport ? 150 : 250}`,
+        y: isInViewport ? 150 : 250,
       };
     } else {
       return {
-        y: `${isInViewport ? 100 : 250}`,
+        y: isInViewport ? 65 : 250,
       };
     }
   };
@@ -34,15 +34,15 @@ const SixthStage = (props) => {
   }, [stage]);
 
   useEffect(() => {
-    setWindowSize(props.windowSize)
-  }, [props.windowSize]);
+    setSize(windowSize);
+  }, [windowSize]);
 
   return (
-    <motion.section {...props} className={classes.main}>
+    <motion.section className={classes.main}>
       <motion.p
         className={classes.text}
         initial={initialTextState}
-        animate={returnAnimationProps}
+        animate={returnAnimationProps(size)}
         transition={{ duration: 1 }}
       >
         FRAMELESS TV's

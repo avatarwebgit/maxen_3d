@@ -8,8 +8,30 @@
   align-items: center;
   justify-content: center;
 }
-.text{
-    color: white ;
-    font-size: 4.5rem ;
-    transform: translateY(4.5rem) ;
+.text {
+  color: white;
+  font-size: 4.5rem;
 }
+ @media only screen and (max-width: 576px) {
+  .text{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .text{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .text{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media only screen and (min-width: 1441px) {
+} 

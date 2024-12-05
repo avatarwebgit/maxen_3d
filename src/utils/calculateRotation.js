@@ -54,14 +54,14 @@ export const calculateRotation = (scrollY) => {
     stage = 5;
   } else if (scrollY >= 6000 && scrollY < 7500) {
     zoom = 1.7;
-    rotationY = 100;
-    CX = 8;
+    rotationY = 94;
+    CX = 15;
     CY = 1.72;
     stage = 6;
   } else if (scrollY >= 7500) {
     zoom = 1.8;
-    rotationY = 115;
-    CX = 5;
+    rotationY = 110;
+    CX = 6;
     CY = 4;
     stage = 7;
   }

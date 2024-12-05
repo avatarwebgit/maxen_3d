@@ -27,6 +27,7 @@
 .text_wrapper {
   width: 50%;
   direction: rtl;
+  text-align: justify;
 }
 .text {
   color: white;
@@ -34,7 +35,7 @@
 }
 @media only screen and (max-width: 576px) {
   .text_wrapper {
-    width: 70%;
+    width: 80%;
   }
   .content_wrapper {
     transform: translateY(0);
@@ -43,7 +44,7 @@
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .text_wrapper {
-    width: 70%;
+    width: 80%;
   }
   .content_wrapper {
     transform: translateY(0);
@@ -52,7 +53,7 @@
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .text_wrapper {
-    width: 70%;
+    width: 80%;
   }
   .content_wrapper {
     transform: translateY(0);

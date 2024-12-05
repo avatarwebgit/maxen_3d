@@ -30,51 +30,69 @@
 }
 .text {
   color: #c3c3c3;
-  line-height: 150%;
   font-size: 1rem;
   text-align: justify;
 }
- @media only screen and (max-width: 576px) {
-  .svg_wrapper{
+.text_wrapper::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (max-width: 576px) {
+  .svg_wrapper {
     display: none;
   }
-  .text_wrapper{
-    width: 90%;
+  .text_wrapper {
+    width: 70%;
     height: 60vh;
     overflow-y: scroll;
   }
-  .content_wrapper{
+  .content_wrapper {
+    box-sizing: content-box;
+    padding-right: 3rem;
   }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
-  .svg_wrapper{
+  .svg_wrapper {
     display: none;
   }
-  .text_wrapper{
-    width: 90%;
+  .text_wrapper {
+    width: 60%;
     height: 60vh;
     overflow-y: scroll;
   }
-  .content_wrapper{
+  .content_wrapper {
+    box-sizing: content-box;
+    padding-right: 3rem;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .svg_wrapper{
+  .svg_wrapper {
     display: none;
   }
-  .text_wrapper{
-    width: 90%;
+  .text_wrapper {
+    width: 60%;
     height: 60vh;
     overflow-y: scroll;
   }
-  .content_wrapper{
+  .content_wrapper {
+    box-sizing: content-box;
+    padding-right: 3rem;
   }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .text_wrapper {
+    width: 55%;
+    height: 70vh;
+    overflow-y: scroll;
+  }
 }
 
 @media only screen and (min-width: 1441px) {
-} 
+  .text_wrapper {
+    width: 55%;
+    height: 55vh;
+    overflow-y: scroll;
+  }
+}

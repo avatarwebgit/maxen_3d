@@ -55,9 +55,9 @@ function App() {
     };
   }, []);
 
-  // useEffect(() => {
+  useEffect(() => {
   console.log(orientation);
-  // }, [orientation]);
+  }, [orientation]);
 
 
   return (

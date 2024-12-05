@@ -1,18 +1,69 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import edge from "../assets/svg/edge.svg";
+import edge from '../assets/svg/edge.svg';
+import classes from './FifthStage.module.css';
 
-import classes from "./FifthStage.module.css";
-const FifthStage = ({ props }) => {
+const FifthStage = props => {
+  let variants = {
+    initial: { y: 0 },
+    scrollDown: { y: -100 },
+    scrollUp: { y: 0 },
+  };
+
+  // const returnVarients = () => {
+  //   if (
+  //     props.windowSize === 'xs' ||
+  //     props.windowSize === 's' ||
+  //     props.windowSize === 'm'
+  //   ) {
+  //     return (variants = {
+  //       initial: { y: 0 },
+  //       scrollDown: { y: -100 },
+  //       scrollUp: { y: 0 },
+  //     });
+  //   } else {
+  //     return (variants = {
+  //       initial: { y: 0 },
+  //       scrollDown: { y: 0 },
+  //       scrollUp: { y: 0 },
+  //     });
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   returnVarients();
+  // }, [props.windowSize]);
+
+  const [animationState, setAnimationState] = useState('initial');
+
+  useEffect(() => {
+    const animateScroll = async () => {
+      setAnimationState('initial');
+      await new Promise(resolve => setTimeout(resolve, 600));
+      setAnimationState('scrollDown');
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setAnimationState('scrollUp');
+      await new Promise(resolve => setTimeout(resolve, 600));
+    };
+
+    animateScroll();
+  }, []);
+
   return (
-    <motion.section className={classes.main} {...props}>
+    <motion.section className={classes.main}>
       <div className={classes.content_wrapper}>
         <span className={classes.svg_wrapper}>
-          <img src={edge} alt="Thin edge" />
+          <img src={edge} alt='Thin edge' />
         </span>
-        <span className={classes.text_wrapper}>
-          <div className={classes.text}>
+        <div className={classes.text_wrapper}>
+          <motion.div
+            initial='initial'
+            animate={animationState}
+            transition={{ duration: 0.5, type: 'tween' }}
+            variants={variants}
+            className={classes.text}
+          >
             <p>
               1. تجربه تماشای فراگیرتر: تلویزیون های بدون فریم با به حداقل
               رساندن حواس پرتی و تمرکز بر محتوا، تجربه تماشای فراگیرتری را ارائه
@@ -49,8 +100,8 @@ const FifthStage = ({ props }) => {
               تلویزیون بدون قاب، بدون هیچ گونه حواس پرتی از قاب یا قاب، می
               توانید عمل را فوری تر و جذاب تر احساس کنید.
             </p>
-          </div>
-        </span>
+          </motion.div>
+        </div>
       </div>
     </motion.section>
   );
