@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
-import { calculateRotation } from "../utils/calculateRotation";
+import { calculateRotation } from '../utils/calculateRotation';
 
-import CustomButton from "./CustomButton";
-import multiple from "../assets/svg/multiple.svg";
+import CustomButton from './CustomButton';
+import multiple from '../assets/svg/multiple.svg';
 
-import ports from "../assets/svg/ports.svg";
-import wifi from "../assets/svg/wifi.svg";
+import ports from '../assets/svg/ports.svg';
+import wifi from '../assets/svg/wifi.svg';
 
-import classes from "./SeventhStage.module.css";
-const SeventhStage = (props) => {
+import classes from './SeventhStage.module.css';
+const SeventhStage = props => {
   const { stage } = calculateRotation(props.scrollAmount);
   const [isInViewport, setIsInViewport] = useState(false);
 
@@ -47,16 +47,16 @@ const SeventhStage = (props) => {
           }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <img className={classes.cap_image} src={multiple} alt="" />
+          <img className={classes.cap_image} src={multiple} alt='' />
         </motion.div>
         <div className={classes.right_side}>
           <div className={classes.ports_wrapper}>
-            <img className={classes.ports_image} src={ports} alt="ports" />
+            <img className={classes.ports_image} src={ports} alt='ports' />
           </div>
-          {/* <div className={classes.text_wrapper}>
-            <span className={classes.wifi_wrapper}>
-              <img className={classes.wifi_icon} src={wifi} alt="" />
-            </span>
+          <div className={classes.text_wrapper}>
+            {/* <span className={classes.wifi_wrapper}>
+              <img className={classes.wifi_icon} src={wifi} alt='' />
+            </span> */}
             <p className={classes.first_title}>
               تلویزیون جدید شما نیاز به تناسب کامل دارد در خانه ی شما
             </p>
@@ -65,7 +65,7 @@ const SeventhStage = (props) => {
               <br /> در یک جو واقعی تر
             </p>
             <CustomButton className={classes.more_btn}>بیشتر</CustomButton>
-          </div> */}
+          </div>
         </div>
       </motion.div>
     </motion.section>

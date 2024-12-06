@@ -42,14 +42,14 @@
   width: 36.5%;
   display: flex;
   flex-direction: row-reverse;
-  align-items: flex-end;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
 }
 .ports_wrapper {
-  width: 28%;
-  height: 100vh;
   position: absolute;
-  top: 0;
+  top: 2%;
+  right: 2%;
+  width: 19%;
 }
 .ports_image {
   margin-top: 54vh;
@@ -58,18 +58,20 @@
   object-fit: contain;
 }
 .text_wrapper {
-  width: 50%;
-  height: 53%;
+  width: 70%;
+  height: 25%;
   display: flex;
   flex-direction: column;
   direction: rtl;
   color: white;
   justify-content: space-between;
+  position: absolute;
+  right: 50%;
 }
 .wifi_wrapper {
   position: absolute;
   top: 48%;
-  right: 15%;
+  right: 12%;
   width: 25%;
 }
 .wifi_icon {
@@ -78,15 +80,36 @@
   direction: ltr;
 }
 .first_title {
-  font-size: 1rem;
+  font-size: .9rem;
+  text-align: justify;
 }
 .second_title {
-  font-size: .5rem;
+  font-size: 0.7rem;
 }
- @media only screen and (max-width: 576px) {
+@media only screen and (max-width: 576px) {
+  .ports_wrapper{
+    width: 24%;
+    right: 15%;
+    top: .0%;
+  }
+  .text_wrapper{
+    height: 70%;
+    top: 25%;
+    right:70%;
+  }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
+  .ports_wrapper{
+    width: 24%;
+    right: 15%;
+    top: .0%;
+  }
+  .text_wrapper{
+    height: 70%;
+    top: 25%;
+    right:70%;
+  }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
@@ -96,4 +119,4 @@
 }
 
 @media only screen and (min-width: 1441px) {
-} 
+}

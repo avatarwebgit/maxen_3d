@@ -1,5 +1,6 @@
 .App {
   max-width: 2000px;
+  overflow: hidden;
 }
 .main {
   height: 500vh;

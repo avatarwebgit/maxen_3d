@@ -4,7 +4,7 @@ import { Button, IconButton } from "@mui/material";
 
 import { useDispatch } from "react-redux";
 import { drawerAction } from "../store/store";
-import Drawer from "../components/Drawer";
+import Drawer from "./Drawer";
 
 import { timeTillContentVisiable } from "../utils/constants";
 
@@ -33,17 +33,6 @@ const Header = ({ scrollAmount }) => {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo_container}>
-        <motion.h2
-          className={classes.title}
-          initial={initialTitleState}
-          animate={{ opacity: isOffsetValid ? 1 : 0 }}
-          transition={{
-            delay: isOffsetValid ? timeTillContentVisiable : 0,
-            duration: isOffsetValid ? 1 : 0,
-          }}
-        ></motion.h2>
-      </div>
       <span className={classes.links}>
         <motion.div
           className={classes.wrapper}
