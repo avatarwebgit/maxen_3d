@@ -89,4 +89,4 @@ export const TV = (props) => {
   );
 };
 
-useGLTF.preload("/tv_final.glb");
+useGLTF.preload(tv);
