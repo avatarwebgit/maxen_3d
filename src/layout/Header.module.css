@@ -40,7 +40,9 @@
   padding: 5px !important;
   margin: 5px !important;
   font-family: pelak !important;
-  font-size: 0.7rem !important;
+  font-size: 1rem !important;
+  position: relative !important;
+  min-width: 5rem !important;
 }
 .header_btn:hover {
   border-bottom: 2px solid rgba(255, 255, 255, 0.391) !important;
@@ -50,19 +52,22 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 1px solid white !important;
+  border: 2px solid white !important;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white !important;
   font-size: 0.7rem;
+  transition: all 0.25s;
+}
+.locale_btn:hover {
+  background-color: rgba(245, 245, 245, 0.395);
 }
 .drawer {
   background-color: white;
 }
 .drawer_backdrop {
-  background-color: red !important;
 }
 .hamburger_menu {
   background-color: transparent !important;
@@ -72,6 +77,35 @@
 }
 .menu_icon:hover {
   transform: scaleY(1.25);
+}
+.sublinks_wrapper {
+  width: 200%;
+  height: fit-content;
+  position: absolute;
+  top: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.25s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  backdrop-filter: blur(20px);
+}
+.header_btn:hover > .sublinks_wrapper {
+  transform: scaleY(1);
+}
+.sublink {
+  padding: 5px 0;
+  font-size: 0.8rem;
+  width: 100%;
+  color: white;
+  transition: all 0.25s;
+}
+.sublink:hover {
+  font-size: 0.8rem;
+  background-color: rgb(201, 201, 201);
 }
 @media only screen and (max-width: 576px) {
   .locale_btn {

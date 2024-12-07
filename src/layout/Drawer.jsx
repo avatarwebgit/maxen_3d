@@ -11,7 +11,7 @@ const Drawer = ({ children }) => {
 
   const dispatch = useDispatch();
 
-  const drawerState = useSelector((state) => state.drawer.openDrawer);
+  const drawerState = useSelector((state) => state.drawerStore.openDrawer);
 
   const handleCloseDrawer = () => {
     dispatch(drawerAction.close());

@@ -1,21 +1,29 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Environment, useGLTF } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
-import { useSpring } from 'react-spring';
-import { calculateRotation } from '../../utils/calculateRotation';
-import * as THREE from 'three';
+import React, { useEffect, useRef, useState } from "react";
+import { Environment, Html, useGLTF, useProgress } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { useSpring } from "react-spring";
+import { calculateRotation } from "../../utils/calculateRotation";
+import * as THREE from "three";
 
-import tv from '../3d_assets/tv_final.glb';
+import tv from "../3d_assets/tv_final.glb";
 
-export const TV = props => {
+export const TV = (props) => {
   const meshRef = useRef();
   const pointLightRef = useRef();
   const { camera } = useThree();
 
   const { nodes, materials } = useGLTF(tv);
 
-  const { rotationX, rotationY, zoom, CX, CY, meshPositionX, frontLightValue } =
-    calculateRotation(props.scroll);
+  const {
+    rotationX,
+    rotationY,
+    zoom,
+    CX,
+    CY,
+    meshPositionX,
+    meshPositionY,
+    frontLightValue,
+  } = calculateRotation(props.scroll);
 
   const springProps = useSpring({
     rotationX: rotationX * (Math.PI / 180),
@@ -24,6 +32,7 @@ export const TV = props => {
     CY,
     zoom,
     meshPositionX,
+    meshPositionY,
     frontLightValue,
     config: { tension: 120, friction: 28 },
   });
@@ -35,13 +44,13 @@ export const TV = props => {
       meshRef.current.position.lerp(
         new THREE.Vector3(
           meshPositionX,
-          meshRef.current.position.y,
+          meshPositionY,
           meshRef.current.position.z,
           camera.position.x,
           camera.position.y,
-          camera.position.z,
+          camera.position.z
         ),
-        delta * 1,
+        delta * 1
       );
       camera.position.x = 5 / springProps.CX.get();
       camera.position.y = 5 / springProps.CY.get();
@@ -64,9 +73,9 @@ export const TV = props => {
         <directionalLight
           position={[-100, -100, 100]}
           ref={pointLightRef}
-          color={'#555555'}
+          color={"#555555"}
         />
-        <Environment preset='warehouse' />
+        <Environment preset="warehouse" />
         <mesh
           geometry={nodes.BCD2_86001_1.geometry}
           material={materials.mat5}
@@ -80,4 +89,4 @@ export const TV = props => {
   );
 };
 
-useGLTF.preload('/tv.glb');
+useGLTF.preload("/tv.glb");
