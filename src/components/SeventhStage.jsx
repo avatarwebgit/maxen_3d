@@ -47,11 +47,11 @@ const SeventhStage = props => {
           }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
-          <img className={classes.cap_image} src={multiple} alt='' />
+          <img className={classes.cap_image} src={multiple} alt="" />
         </motion.div>
         <div className={classes.right_side}>
           <div className={classes.ports_wrapper}>
-            <img className={classes.ports_image} src={ports} alt='ports' />
+            <img className={classes.ports_image} src={ports} alt="ports" />
           </div>
           <div className={classes.text_wrapper}>
             {/* <span className={classes.wifi_wrapper}>
@@ -68,6 +68,11 @@ const SeventhStage = props => {
           </div>
         </div>
       </motion.div>
+      <a href="https://maxen.life/product-categories/1">
+        <CustomButton className={classes.all_tvs}>
+          مشخصات تمام تلوزیون ها
+        </CustomButton>
+      </a>
     </motion.section>
   );
 };

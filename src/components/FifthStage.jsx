@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+import CustomButton from "./CustomButton";
+
+
 import edge from '../assets/svg/edge.svg';
 import classes from './FifthStage.module.css';
 
@@ -10,30 +13,6 @@ const FifthStage = props => {
     scrollDown: { y: -100 },
     scrollUp: { y: 0 },
   };
-
-  // const returnVarients = () => {
-  //   if (
-  //     props.windowSize === 'xs' ||
-  //     props.windowSize === 's' ||
-  //     props.windowSize === 'm'
-  //   ) {
-  //     return (variants = {
-  //       initial: { y: 0 },
-  //       scrollDown: { y: -100 },
-  //       scrollUp: { y: 0 },
-  //     });
-  //   } else {
-  //     return (variants = {
-  //       initial: { y: 0 },
-  //       scrollDown: { y: 0 },
-  //       scrollUp: { y: 0 },
-  //     });
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   returnVarients();
-  // }, [props.windowSize]);
 
   const [animationState, setAnimationState] = useState('initial');
 
@@ -54,13 +33,13 @@ const FifthStage = props => {
     <motion.section className={classes.main}>
       <div className={classes.content_wrapper}>
         <span className={classes.svg_wrapper}>
-          <img src={edge} alt='Thin edge' />
+          <img src={edge} alt="Thin edge" />
         </span>
         <div className={classes.text_wrapper}>
           <motion.div
-            initial='initial'
+            initial="initial"
             animate={animationState}
-            transition={{ duration: 0.5, type: 'tween' }}
+            transition={{ duration: 0.5, type: "tween" }}
             variants={variants}
             className={classes.text}
           >
@@ -103,6 +82,11 @@ const FifthStage = props => {
           </motion.div>
         </div>
       </div>
+      <a href="https://maxen.life/product-categories/1">
+        <CustomButton className={classes.all_tvs}>
+          مشخصات تمام تلوزیون ها
+        </CustomButton>
+      </a>
     </motion.section>
   );
 };

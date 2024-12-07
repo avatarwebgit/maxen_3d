@@ -27,6 +27,7 @@
 .text_wrapper {
   width: 50%;
   direction: rtl;
+  scrollbar-width: none;
 }
 .text {
   color: #c3c3c3;
@@ -34,7 +35,13 @@
   text-align: justify;
 }
 .text_wrapper::-webkit-scrollbar {
-  display: none;
+  display: none ;
+  scrollbar-width: none;
+}
+.all_tvs{
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
 }
 @media only screen and (max-width: 576px) {
   .svg_wrapper {

@@ -12,6 +12,11 @@
   color: white;
   font-size: 4.5rem;
 }
+.all_tvs{
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
+}
  @media only screen and (max-width: 576px) {
   .text{
     font-size: 3rem;

@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+import CustomButton from "./CustomButton";
+
+
 import edge from "../assets/svg/edge.svg";
 
 import classes from "./ThirdStage.module.css";
@@ -12,7 +15,7 @@ const ThirdStage = ({ props }) => {
           <img src={edge} alt="Thin edge" />
         </span>
         <span className={classes.text_wrapper}>
-          <p className={classes.text }>
+          <p className={classes.text}>
             تلویزیون‌های بدون فریم که به عنوان تلویزیون‌های بدون حاشیه یا لبه‌به
             لبه نیز شناخته می‌شوند، تلویزیون‌هایی هستند که حاشیه‌های بسیار نازک
             یا بدون حاشیه در اطراف صفحه‌نمایش دارند و ظاهر یک نمایشگر بدون حاشیه
@@ -20,6 +23,11 @@ const ThirdStage = ({ props }) => {
           </p>
         </span>
       </div>
+      <a href="https://maxen.life/product-categories/1">
+        <CustomButton className={classes.all_tvs}>
+          مشخصات تمام تلوزیون ها
+        </CustomButton>
+      </a>
     </motion.section>
   );
 };

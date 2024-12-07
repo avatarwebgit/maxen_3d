@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import { Tooltip } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Tooltip } from "@mui/material";
 
-import logo from '../assets/images/maxen_logo_trasnsparent.png';
-import gear from '../assets/svg/gear.svg';
-import contact from '../assets/svg/contact.svg';
+import logo from "../assets/images/maxen_logo_trasnsparent.png";
+import gear from "../assets/svg/gear.svg";
+import contact from "../assets/svg/contact.svg";
 
-import { calculateRotation } from '../utils/calculateRotation';
-import { timeTillContentVisiable } from '../utils/constants';
+import { calculateRotation } from "../utils/calculateRotation";
+import { timeTillContentVisiable } from "../utils/constants";
 
-import FirstStage from './FirstStage';
-import SecondStage from './SecondStage';
-import ThirdStage from './ThirdStage';
+import FirstStage from "./FirstStage";
+import SecondStage from "./SecondStage";
+import ThirdStage from "./ThirdStage";
+import FourthStage from "./FourthStage";
+import FifthStage from "./FifthStage";
+import SixthStage from "./SixthStage";
+import SeventhStage from "./SeventhStage";
 
-import ColumnText from './ColumnText';
+import ColumnText from "./ColumnText";
 
-import classes from './ContentWrapper.module.css';
-import FourthStage from './FourthStage';
-import FifthStage from './FifthStage';
-import SixthStage from './SixthStage';
-import SeventhStage from './SeventhStage';
+import classes from "./ContentWrapper.module.css";
+
 const ContentWrapper = ({ scrollAmount, windowSize }) => {
   const [isLogoSmall, setIsLogoSmall] = useState(false);
   const [visiableStage, setVisiableStage] = useState({
@@ -32,12 +33,12 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
     seventhStage: false,
   });
 
-  const updateVisibleStage = stage => {
+  const updateVisibleStage = (stage) => {
     setVisiableStage({
       firstStage: stage === 1 || stage === 0 || stage === 1.5,
       secondStage: stage === 2,
       thirdStage: stage === 3,
-      fourthStage: stage === 4,
+      fourthStage: stage === 4 || stage === 4.5,
       fifthStage: stage === 5,
       sixthStage: stage === 6,
       seventhStage: stage === 7,
@@ -53,10 +54,10 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
       setIsLogoSmall(true);
     }
   }, [scrollAmount]);
-
+  
   const initialFloatBtnState = {
-    right: '8%',
-    top: '40%',
+    right: "8%",
+    top: "40%",
   };
 
   const initialStageState = {
@@ -64,15 +65,15 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
   };
 
   const returnAnimationProps = () => {
-    if (windowSize === 'l' || windowSize === 'xl') {
+    if (windowSize === "l" || windowSize === "xl") {
       return {
-        left: `${isLogoSmall ? '5%' : '7.5%'}`,
-        top: `${isLogoSmall ? '50%' : '40%'}`,
+        left: `${isLogoSmall ? "2%" : "7.5%"}`,
+        top: `${isLogoSmall ? "50%" : "40%"}`,
       };
     } else {
       return {
-        left: `${isLogoSmall ? '5%' : '7.5%'}`,
-        top: `${isLogoSmall ? '35%' : '45%'}`,
+        left: `${isLogoSmall ? "5%" : "7.5%"}`,
+        top: `${isLogoSmall ? "35%" : "45%"}`,
       };
     }
   };
@@ -82,7 +83,7 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
   }, [stage]);
 
   const initialState = {
-    right: '-10%',
+    right: "-10%",
   };
 
   return (
@@ -92,7 +93,7 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
           isLogoSmall ? classes.logo_height_small : classes.logo_height_big
         }`}
       >
-        <img className={classes.logo} src={logo} alt='maxen logo' />
+        <img className={classes.logo} src={logo} alt="maxen logo" />
         <motion.p
           className={classes.title_text}
           initial={initialStageState}
@@ -106,39 +107,34 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
         </motion.p>
       </div>
 
-      {stage &&
-        windowSize === 'xl' &&
-        windowSize === 'l' &&
-        windowSize === 'm' >= 1 && (
-          <>
-            <motion.div
-              className={`${classes.float_btn_wrapper}`}
-              initial={initialFloatBtnState}
-              animate={returnAnimationProps}
-              transition={{ duration: 0.25, type: 'tween' }}
-            >
-              <Tooltip title={'خدمات پس از فروش'} placement='top' arrow>
-                <button className={`${classes.float_button} ${classes.gear}`}>
-                  <img src={gear} alt='' className={classes.float_btn_img} />
-                </button>
-              </Tooltip>
-              <Tooltip title={'021-58736'} placement='top' arrow>
-                <button
-                  className={`${classes.float_button} ${classes.contact}`}
-                >
-                  <img src={contact} alt='' className={classes.float_btn_img} />
-                </button>
-              </Tooltip>
-            </motion.div>
-            <ColumnText
-              className={classes.column_text}
-              lng={'en'}
-              initial={initialState}
-              animate={{ right: '1%' }}
-              transition={{ duration: 0.25, type: 'tween' }}
-            />
-          </>
-        )}
+      {stage >= 1 && (
+        <>
+          <motion.div
+            className={`${classes.float_btn_wrapper}`}
+            initial={initialFloatBtnState}
+            animate={returnAnimationProps}
+            transition={{ duration: 0.25, type: "tween" }}
+          >
+            <Tooltip title={"خدمات پس از فروش"} placement="top" arrow>
+              <button className={`${classes.float_button} ${classes.gear}`}>
+                <img src={gear} alt="" className={classes.float_btn_img} />
+              </button>
+            </Tooltip>
+            <Tooltip title={"021-58736"} placement="top" arrow>
+              <button className={`${classes.float_button} ${classes.contact}`}>
+                <img src={contact} alt="" className={classes.float_btn_img} />
+              </button>
+            </Tooltip>
+          </motion.div>
+          <ColumnText
+            className={classes.column_text}
+            lng={"en"}
+            initial={initialState}
+            animate={{ right: "1%" }}
+            transition={{ duration: 0.25, type: "tween" }}
+          />
+        </>
+      )}
 
       {visiableStage.firstStage && (
         <motion.div
@@ -180,7 +176,7 @@ const ContentWrapper = ({ scrollAmount, windowSize }) => {
           transition={{ duration: 2 }}
           className={classes.stage_wrapper}
         >
-          <FourthStage />
+          <FourthStage scrollAmount={scrollAmount} windowSize={windowSize} />
         </motion.div>
       )}
 

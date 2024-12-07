@@ -25,5 +25,10 @@
 }
 .text {
   color: white;
-  font-size: 1rem;
+  font-size: 2rem;
+}
+.all_tvs{
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
 }

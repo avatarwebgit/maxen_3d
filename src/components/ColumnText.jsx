@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
 import { calculateRotation } from "../utils/calculateRotation";
 
 import sharedStyles from "../style/shared.css";
 import classes from "./ColumnText.module.css";
-const ColumnText = (props, { className, lng }) => {
+const ColumnText = (props, { className }) => {
   const [rtl, setRtl] = useState(false);
   const [scroll, setScroll] = useState(0);
   const [stageStep, setStageStep] = useState(0);
@@ -13,6 +14,8 @@ const ColumnText = (props, { className, lng }) => {
   const { stage } = calculateRotation(scroll);
 
   const stages = [100, 100, 2000, 2900, 4000, 5900, 6500, 7500];
+
+  const lng = useSelector((state) => state.localeStore.lng);
 
   useEffect(() => {
     handleScrollToStage(stages[stage]);
@@ -84,62 +87,102 @@ const ColumnText = (props, { className, lng }) => {
         className={`${classes.text} ${stage === 0 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(0))}
       >
-        طرح
+        {lng === "fa" ? "طرح" : "Design"}{" "}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 1 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(1))}
       >
-        فن آوری
-        <br />
-        تصویر
+        {lng === "fa" ? (
+          <>
+            فن آوری
+            <br />
+            تصویر
+          </>
+        ) : (
+          <>
+            Image
+            <br />
+            Technology
+          </>
+        )}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 2 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(2))}
       >
-        فن آوری
-        <br />
-        صدا
+        {lng === "fa" ? (
+          <>
+            فن آوری
+            <br />
+            صدا
+          </>
+        ) : (
+          <>
+            Sound
+            <br />
+            Technology
+          </>
+        )}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 3 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(3))}
       >
-        پردازنده
+        {lng === "fa" ? <>پردازنده</> : <>Processor</>}
       </button>
       <div className={classes.divider} />
       <button
-        className={`${classes.text} ${stage === 4 ? classes.active : ""}`}
+        className={`${classes.text} ${
+          stage === 4 || stage === 4.5 ? classes.active : ""
+        }`}
         onClick={() => handleScrollToStage(stages.at(4))}
       >
-        امکانات
+        {lng === "fa" ? <> امکانات</> : <>Facilities</>}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 5 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(5))}
       >
-        ممکن ها
+        {lng === "fa" ? <> ممکن ها</> : <>Possibilities</>}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 6 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(6))}
       >
-        اشتراک
-        <br />
-        صفحه نمایش
+        {lng === "fa" ? (
+          <>
+            اشتراک
+            <br />
+            صفحه نمایش
+          </>
+        ) : (
+          <>
+            Screen
+            <br />
+            Share
+          </>
+        )}
       </button>
       <div className={classes.divider} />
       <button
         className={`${classes.text} ${stage === 7 ? classes.active : ""}`}
         onClick={() => handleScrollToStage(stages.at(7))}
       >
-        پایه تلوزیون
+        {lng === "fa" ? (
+          <>پایه تلوزیون</>
+        ) : (
+          <>
+            TV
+            <br />
+            Stand
+          </>
+        )}
       </button>
     </motion.div>
   );

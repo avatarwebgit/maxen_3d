@@ -19,10 +19,6 @@
   margin-right: 2rem;
   padding-left: 3rem;
 }
-.cap_wrapper,
-.ports_wrapper,
-.text_wrapper {
-}
 .cap_wrapper {
   height: 100%;
   width: 20%;
@@ -80,42 +76,57 @@
   direction: ltr;
 }
 .first_title {
-  font-size: .9rem;
+  font-size: 0.9rem;
   text-align: justify;
 }
 .second_title {
   font-size: 0.7rem;
 }
+.all_tvs {
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
+}
 @media only screen and (max-width: 576px) {
-  .ports_wrapper{
+  .ports_wrapper {
     width: 24%;
     right: 15%;
-    top: .0%;
+    top: 0%;
   }
-  .text_wrapper{
+  .text_wrapper {
     height: 70%;
     top: 25%;
-    right:70%;
+    right: 70%;
   }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
-  .ports_wrapper{
+  .ports_wrapper {
     width: 24%;
     right: 15%;
-    top: .0%;
+    top: 0%;
   }
-  .text_wrapper{
+  .text_wrapper {
     height: 70%;
     top: 25%;
-    right:70%;
+    right: 70%;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .text_wrapper {
+    height: 60%;
+    top: 35%;
+    right: 70%;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  .text_wrapper {
+    height: 60%;
+    top: 35%;
+    right: 70%;
+  }
 }
 
 @media only screen and (min-width: 1441px) {

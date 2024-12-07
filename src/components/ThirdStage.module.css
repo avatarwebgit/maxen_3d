@@ -31,7 +31,12 @@
 }
 .text {
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
+}
+.all_tvs{
+  position: fixed;
+  bottom: 5%;
+  left: 10%;
 }
 @media only screen and (max-width: 576px) {
   .text_wrapper {

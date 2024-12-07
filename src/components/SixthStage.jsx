@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 
 import { calculateRotation } from '../utils/calculateRotation';
 
+import CustomButton from "./CustomButton";
+
+
 import classes from './SixthStage.module.css';
 const SixthStage = ({ windowSize, scrollAmount }) => {
   const { stage } = calculateRotation(scrollAmount);
@@ -47,6 +50,11 @@ const SixthStage = ({ windowSize, scrollAmount }) => {
       >
         FRAMELESS TV's
       </motion.p>
+      <a href="https://maxen.life/product-categories/1">
+        <CustomButton className={classes.all_tvs}>
+          مشخصات تمام تلوزیون ها
+        </CustomButton>
+      </a>
     </motion.section>
   );
 };
