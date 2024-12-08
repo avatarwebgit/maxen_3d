@@ -6,8 +6,8 @@ import CustomButton from "../components/CustomButton";
 
 import lgLogo from "../assets/images/Group 200.png";
 import qoled from "../assets/images/QLED.png";
-import mainImg_1 from "../assets/images/OLDE.png";
-import mainImg_2 from "../assets/images/qled tv -0.png";
+import mainImg_1 from "../assets/images/OLDE.webp";
+import mainImg_2 from "../assets/images/qled tv -0.webp";
 import qoledSvg from "../assets/svg/qoled.svg";
 
 import classes from "./FourthStage.module.css";
@@ -19,17 +19,6 @@ const FourthStage = ({ windowSize, scrollAmount }) => {
   const { stage } = calculateRotation(scroll);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
     if (stage >= 4.5) {
       setIsFirstVisible(false);
     }
@@ -38,6 +27,10 @@ const FourthStage = ({ windowSize, scrollAmount }) => {
     }
   }, [stage, scroll]);
 
+  useEffect(() => {
+    setScroll(scrollAmount);
+  }, [scrollAmount]);
+
   return (
     <section className={classes.main}>
       <div className={classes.content}>
@@ -45,11 +38,13 @@ const FourthStage = ({ windowSize, scrollAmount }) => {
           <div className={classes.step_one}>
             <div className={classes.content_wrapper}>
               <span className={classes.right_side}>
-                <img className={classes.main_img} src={mainImg_1} alt="" />
-                <img className={classes.main_logo} src={lgLogo} alt="" />
+                <img className={classes.main_img} src={mainImg_1} alt="TV layers" />
+                <img className={classes.main_logo} src={lgLogo} alt="LG" />
               </span>
               <span className={classes.left_side}>
-                <img className={classes.qoled_logo} src={qoled} alt="" />
+                <span className={classes.qoled_logo_wrapper}>
+                  <img className={classes.qoled_logo} src={qoled} alt="QOLED" />
+                </span>
                 <p className={classes.title}>
                   QUANTUM <br />
                   DOT

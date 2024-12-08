@@ -35,6 +35,14 @@ const TvContent = ({ windowSize }) => {
     }
   }, [progress, total, loaded]);
 
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [isLoading]);
+
   return (
     <motion.div className={classes.main}>
       <Canvas className={classes.canvas} camera={{ zoom: 1, fov: 70 }}>

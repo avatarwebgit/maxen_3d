@@ -62,13 +62,14 @@
   color: white;
   justify-content: space-between;
   position: absolute;
-  right: 50%;
+  right: 45%;
+  top: 45%;
 }
 .wifi_wrapper {
   position: absolute;
-  top: 48%;
-  right: 12%;
-  width: 25%;
+  top: 20%;
+  right: -50%;
+  width: 35%;
 }
 .wifi_icon {
 }
@@ -78,6 +79,7 @@
 .first_title {
   font-size: 0.9rem;
   text-align: justify;
+  max-width: 300px;
 }
 .second_title {
   font-size: 0.7rem;

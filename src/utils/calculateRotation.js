@@ -46,8 +46,8 @@ export const calculateRotation = (scrollY) => {
     CY = 3;
     meshPositionX = 0;
     stage = 4;
-  } else if (scrollY >= 3950 && scrollY < 4500) {
-    zoom = 2.5;
+  } else if (scrollY >= 3750 && scrollY < 4500) {
+    zoom = 3;
     rotationY = 0;
     rotationX = 0;
     CX = 90;
@@ -56,8 +56,7 @@ export const calculateRotation = (scrollY) => {
     stage = 4.5;
   } else if (scrollY >= 4500 && scrollY < 6000) {
     zoom = 0.95;
-    rotationY = ((scrollY - 2500) / 2500) * 60;
-
+    rotationY = 90;
     CX = 1.8;
     CY = 3;
     meshPositionX = 0;

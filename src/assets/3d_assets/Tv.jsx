@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Environment, Html, useGLTF, useProgress } from "@react-three/drei";
+import React, { useRef } from "react";
+import { Environment, useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useSpring } from "react-spring";
 import { calculateRotation } from "../../utils/calculateRotation";

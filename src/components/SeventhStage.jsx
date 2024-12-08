@@ -54,9 +54,9 @@ const SeventhStage = props => {
             <img className={classes.ports_image} src={ports} alt="ports" />
           </div>
           <div className={classes.text_wrapper}>
-            {/* <span className={classes.wifi_wrapper}>
+            <span className={classes.wifi_wrapper}>
               <img className={classes.wifi_icon} src={wifi} alt='' />
-            </span> */}
+            </span>
             <p className={classes.first_title}>
               تلویزیون جدید شما نیاز به تناسب کامل دارد در خانه ی شما
             </p>
