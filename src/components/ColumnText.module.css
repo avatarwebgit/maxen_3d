@@ -4,6 +4,7 @@
   align-items: flex-end;
   justify-content: center;
   position: relative;
+  z-index: 1000;
 }
 .divider {
   height: 1px;
