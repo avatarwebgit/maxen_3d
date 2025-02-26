@@ -13,7 +13,7 @@ const ColumnText = (props, { className }) => {
 
  const { stage } = calculateRotation(scroll);
 
- const stages = [9, 100, 1500, 2250, 3000, 4000, 5000, 6000, 7500, 9000, 10500];
+ const stages = [10, 100, 1500, 2250, 3000, 4000, 5000, 6000, 7500, 9000, 10500];
 
  const lng = useSelector(state => state.localeStore.lng);
 

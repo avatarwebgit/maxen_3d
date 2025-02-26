@@ -1,11 +1,69 @@
 .main {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
+ position: fixed;
+ top: 0;
+ right: 0;
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
+
+.main * {
+ color: #ffffff;
+}
+
 .content {
-  max-width: 2000px;
-  margin: 0 auto;
+ max-width: 2000px;
+ margin: 0 auto;
+ width: 85%;
+}
+
+.img_top {
+ margin-top: 50px !important;
+ margin-bottom: -50px !important;
+}
+
+.img,
+.img_top {
+ margin-bottom: -25px;
+}
+
+.bottom_wrapper {
+ display: flex;
+ flex-direction: column;
+ position: relative;
+}
+
+.title {
+ font-size: 30px;
+ line-height: 100%;
+}
+
+.title strong {
+ font-size: 30px;
+}
+
+.main_text {
+ font-size: 20px;
+}
+
+.main_text,
+.range {
+ text-align: right;
+ margin-top: 10px;
+}
+
+.range {
+ font-size: 30px;
+}
+
+.bottom_wrapper {
+ margin-top: -20px;
+}
+
+.all_tvs {
+  position: absolute;
+  bottom: 2%;
+  left: 0%;
 }

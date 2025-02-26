@@ -1,11 +1,48 @@
 .main {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
+ position: fixed;
+ top: 0;
+ right: 0;
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
+
+.main * {
+ color: #ffffff;
+}
+
 .content {
-  max-width: 2000px;
-  margin: 0 auto;
+ max-width: 2000px;
+ margin: 0 auto;
+ width: 85%;
+}
+
+.img {
+ width: 60%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ margin-left: -50px;
+}
+
+.title {
+ position: absolute;
+ top: 40%;
+ right: 18%;
+ transform: translate(-50%, -50%);
+}
+
+.all_tvs {
+ position: fixed;
+ bottom: 5%;
+ left: 10%;
+}
+
+.more {
+ position: fixed;
+ right: 13%;
+ bottom: 15%;
 }
