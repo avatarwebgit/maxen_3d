@@ -131,9 +131,24 @@
   left: 10%;
   display: none;
 }
+.text_wrapper {
+  width: 50%;
+  direction: rtl;
+  scrollbar-width: none;
+  margin-top:4rem;
+  overflow-y: scroll;
+  height: calc(100vh - 5rem);
+}
+.text {
+  color: #c3c3c3;
+  font-size: 1rem;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
 @media only screen and (max-width: 576px) {
   .right_side_2 {
-    padding: 0;
+    display: none;
   }
   .qoledSvg_wrapper {
     display: none;
@@ -146,7 +161,7 @@
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
   .right_side_2 {
-    padding: 0;
+    display: none;
   }
   .qoledSvg_wrapper {
     display: none;

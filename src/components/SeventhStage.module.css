@@ -100,6 +100,9 @@
     top: 25%;
     right: 70%;
   }
+  .more_btn{
+    margin-bottom: 60px;
+  }
 }
 
 @media only screen and (min-width: 577px) and (max-width: 768px) {
@@ -112,6 +115,9 @@
     height: 70%;
     top: 25%;
     right: 70%;
+  }
+  .more_btn{
+    margin-bottom: 60px;
   }
 }
 

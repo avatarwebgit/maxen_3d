@@ -27,7 +27,6 @@ const TvContent = ({ windowSize }) => {
 
   const { progress, total, loaded } = useProgress();
   useEffect(() => {
-    console.log(progress, total, loaded);
     if (progress === 100) {
       setIsLoading(false);
     } else {
